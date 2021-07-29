@@ -2,6 +2,7 @@
 plugins:
   - jemoji
   - jekyll-paginate
+  - jekyll-include-cache
   # - jekyll-redirect-from
 # Site settings
 title: Escuelita Chilota
@@ -15,7 +16,7 @@ kramdown:
   html_to_native: true
 # blog cover
 cover: "/assets/img/marea.jpg"
-
+#remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 # name: 'Dirk Fabisch'
 author: 'Vera Sativa'
 author_image: "/assets/img/logo_full.png"
