@@ -3,7 +3,7 @@ plugins:
   - jemoji
   - jekyll-paginate
   - jekyll-include-cache
-   - jekyll-redirect-from
+  - jekyll-redirect-from
 # Site settings
 title: Escuelita Chilota
 description: > # this means to ignore newlines until "email:"
@@ -23,7 +23,7 @@ include:
 author: 'Vera Sativa'
 author_image: "/assets/img/logo_full.png"
 og_default_img: "/assets/img/logo_full.png"
-timezone: Americas/Santiago
+timezone: America/Santiago
 paginate:	10
 paginate_path: "/blog/page:num/"
 
