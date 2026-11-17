@@ -6,6 +6,7 @@ author: "Vera Sativa"
 image: "/assets/img/figuras_agua/foto_huillin.jpg"
 image2: "/assets/img/figuras_agua/foto_huillin_vertical.jpg"
 description: "Partí dibujando las cuencas, que son los corredores biológicos de la isla, y terminé dibujando lo frágil que es el agua que llega a nuestras casas."
+excerpt: "Partí dibujando las cuencas, que son los corredores biológicos de la isla, y terminé dibujando lo frágil que es el agua que llega a nuestras casas."
 ---
 {% comment %}
 Figures and sheet details are built by `make figures`; copy out/figuras/ into
