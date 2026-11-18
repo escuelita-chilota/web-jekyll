@@ -9,8 +9,16 @@ description: "Partí dibujando las cuencas, que son los corredores biológicos d
 excerpt: "Partí dibujando las cuencas, que son los corredores biológicos de la isla, y terminé dibujando lo frágil que es el agua que llega a nuestras casas."
 ---
 {% comment %}
-Figures and sheet details are built by `make figures`; copy out/figuras/ into
-assets/img/figuras_agua/ and the full sheets (PDF only) into assets/downloads/.
+Figures and sheet details are built by `make figures` in ../aguamapa; copy
+out/figuras/ into assets/img/figuras_agua/ and the full sheets (PDF only) into
+assets/downloads/. Two details and the thumbnails are re-rendered from the
+PDFs instead, because the ones make writes are too small for the column:
+  detalle_cuenca_cucao.png  pdftoppm -r 250, sheet 1, the Cucao plot only,
+                            resized to 1400 px wide, PNG8 64 colours
+  detalle_obras.png         pdftoppm -r 300, sheet 2, Llicaldad Montaña to
+                            Nercón, resized to 1200 px wide, PNG8 64 colours,
+                            with the stray Cuyul labels painted out
+  lamina*_mini.jpg          pdftoppm -jpeg quality 82, 700 px wide
 Every number in the text is printed on one of the two sheets, so if a number
 changes, rebuild and reread.
 {% endcomment %}
@@ -74,8 +82,11 @@ como rampas y los lagos como mesetas a su cota real.
 
 ![Detalle de la cuenca de Cucao en la lámina 1](/assets/img/figuras_agua/detalle_cuenca_cucao.png)
 
-Cucao es la única red de la isla donde un lago cae dentro de otro: Cucao,
-Huillinco, Tepuhueico, Reñihue, uno tras otro bajando hasta el Pacífico.
+Cucao es la cadena de lagos más larga que dibujé: Cucao, Huillinco,
+Tepuhueico, Reñihue, uno tras otro bajando hasta el Pacífico. La otra es la
+del Medina, que nace en el lago Chaiguata, cae al Chaiguaco y de ahí corre 44
+km hasta el mar. También al Pacífico, aunque yo la tenía anotada saliendo al
+mar interior.
 
 ## Pero ahí no estaba el agua que tomamos
 
@@ -118,6 +129,12 @@ de un embalse ni de un acuífero profundo y generoso. Viene de cuencas chicas
 —la mediana son 2,5 km²— cubiertas de bosque, que hacen de esponja y de
 filtro. Sáquenle el bosque y no queda sistema.
 
+Y hay otra esponja que el satélite no ve: la turbera. La saqué del Inventario
+Nacional de Humedales del Ministerio del Medio Ambiente, y en la lámina va con
+puntitos, en el borde del bosque, porque muchas veces está debajo de él. **De
+esa misma ladera, 72 km² son turbera.** El satélite la veía casi toda como
+bosque o como pasto.
+
 Por eso la lámina 2 es, al final, un dibujo de fragilidad.
 
 ## Y arriba hay obras
@@ -152,10 +169,16 @@ expediente se lee completo en seia.sea.gob.cl**. Eso era innegociable para mí:
 un machón rojo sobre tu APR no sirve de nada si quien está parado frente a la
 lámina no puede averiguar de qué se trata.
 
-Un aviso honesto sobre ese número: las obras las cuento en celdas de cien
+Esa lista ahora dice también cuánta turbera hay en las celdas que tocan las
+obras de cada proyecto. Las cifras más grandes son de dos parques eólicos:
+13,1 km² en las de Altos de Tablaruca, entre Quellón y Chonchi, cuyo titular
+desistió del estudio, y 3,2 km² en las de la ampliación de San Pedro, en
+Dalcahue, que está aprobada.
+
+Un aviso honesto sobre esos números: las obras las cuento en celdas de cien
 metros. Una torre es mucho más angosta que eso y un conductor más angosto
-todavía. El porcentaje es un **techo** a la resolución de la grilla, no la
-superficie de una servidumbre.
+todavía. El porcentaje y la turbera son un **techo** a la resolución de la
+grilla, no la superficie de una servidumbre.
 
 ---
 
@@ -179,33 +202,46 @@ salen. Cópialas, imprímelas, corrígelas y vuelve a repartirlas.
 Estas láminas están incompletas y prefiero decirlo yo:
 
 - OpenStreetMap corta 43 de los 96 cursos nombrados antes de que lleguen al
-  mar. Eso se arregla mapeando, y se puede arreglar entre varios.
+  mar. En la lámina, el tramo que falta del Natri y del Mechai va punteado,
+  sacado de HydroRIVERS, que es un modelo y no un mapa. Eso se arregla
+  mapeando, y se puede arreglar entre varios.
 - De 48 lagos, solo 5 tienen cota medida en terreno. El resto es un modelo que
   se equivoca hasta en 13 metros y no avisa.
 - La cobertura satelital no separa bosque nativo de plantación.
 
-Y hay tres datos que busqué y no conseguí. **Si alguien los tiene o sabe cómo
-pedirlos, escríbenos.** Los tres son la misma pieza faltante: las turberas y
-los humedales, que son la esponja real de la isla y son justo lo que ni el
-modelo de elevación ni el satélite alcanzan a ver.
+La pieza que más me faltaba eran las turberas y los humedales, que son la
+esponja real de la isla y son justo lo que ni el modelo de elevación ni el
+satélite alcanzan a ver. Una parte ya apareció: el **Inventario Nacional de
+Humedales** del MMA, que antes me devolvía el listado vacío, lo entrega sin
+credencial el Geoportal Humedales del ministerio. Es la turbera con puntitos
+de la lámina 2.
+
+El inventario dice dónde está la turbera y si ya la explotaron, pero no qué
+tan profunda es ni cuánta agua guarda. Eso lo dirían dos datos que busqué y no
+conseguí. **Si alguien los tiene o sabe cómo pedirlos, escríbenos.**
 
 1. El **catastro de turberas de *Sphagnum*** de ODEPA/Geosoluciones para
    Llanquihue–Chiloé–Palena. El informe dice que generó capas SIG; no están
    publicadas.
 2. El **catastro geológico de turba** de SERNAGEOMIN con el GORE Los Lagos,
    de 2007.
-3. El **Inventario Nacional de Humedales** del MMA, que está servido en
-   `arcgis.mma.gob.cl` pero devuelve el listado vacío sin credencial.
 
 ## Cómo están hechas
 
 El relieve es FABDEM v1-2 (CC BY-NC-SA 4.0); el escurrimiento lo calculé yo
 con relleno de depresiones y ruteo D8 sobre una grilla de cien metros. La
-cobertura es ESA WorldCover 10 m 2021 (CC BY 4.0). Los cursos y lagos vienen
-de OpenStreetMap por la base de la Minga (ODbL). Las captaciones son el
+cobertura es ESA WorldCover 10 m 2021 (CC BY 4.0), y la turbera, el Inventario
+Nacional de Humedales del Ministerio del Medio Ambiente. Los cursos y lagos
+vienen de OpenStreetMap por la base de la Minga (ODbL), y el tramo final que
+OSM no dibuja, de HydroRIVERS (CC BY 4.0). Las captaciones son el
 Catastro Público de Aguas de la DGA. Las obras son la cartografía de los
 expedientes del SEIA. Cada lámina lleva su propia lista de fuentes impresa al
 pie, con licencia y todo.
 
 Si encuentras un error —un nombre mal escrito, un río que no va para allá, una
 cota que no es— dímelo. Es exactamente para eso que están hechas así.
+
+<small><em>Actualizado el 18 de noviembre de 2026: la lámina 2 ahora dibuja la
+turbera del Inventario Nacional de Humedales, y la lámina 1 corrige tres
+cauces que OpenStreetMap dejaba cortados: el Medina sale al Pacífico, el Pío
+Pío sale al estero Queilén por el Mechai y el Natri llega al mar interior.</em></small>
